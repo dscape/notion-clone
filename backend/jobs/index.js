@@ -7,7 +7,7 @@ const executeJobs = async () => {
   console.log("Setup database connection");
   mongoose
     .connect(
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PW}@notion-clone-0.gqqwp.gcp.mongodb.net/notion?retryWrites=true&w=majority`,
+      process.env.MONGO_URI,
       { useNewUrlParser: true, useUnifiedTopology: true }
     )
     .then(async () => {
